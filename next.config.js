@@ -7,7 +7,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'oss4.ai',
+        hostname: 'www.oss4.ai',
       },
     ],
     path: '/_next/image',

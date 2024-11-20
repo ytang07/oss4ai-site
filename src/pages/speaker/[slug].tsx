@@ -76,7 +76,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 		name: speaker.name,
 		description: speaker.description,
 		image: speaker.speakerPhoto,
-		url: `https://oss4.ai/speaker/${speaker.slug}`,
+		url: `https://www.oss4.ai/speaker/${speaker.slug}`,
 	};
 
 	const eventStructuredData: WithContext<Event> = {
@@ -101,7 +101,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 		organizer: {
 			'@type': 'Organization',
 			name: 'Turing',
-			url: 'https://oss4.ai',
+			url: 'https://www.oss4.ai',
 		},
 	};
 
@@ -115,7 +115,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 					description: speaker.description,
 					images: [{ url: speaker.speakerPhoto, alt: speaker.name }],
 					type: 'website',
-					url: `https://oss4.ai/speaker/${speaker.slug}`,
+					url: `https://www.oss4.ai/speaker/${speaker.slug}`,
 				}}
 				twitter={{
 					cardType: 'summary_large_image',
@@ -126,24 +126,24 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 					{
 						position: 1,
 						name: 'Home',
-						item: 'https://oss4.ai',
+						item: 'https://www.oss4.ai',
 					},
 					{
 						position: 2,
 						name: 'Speakers',
-						item: 'https://oss4.ai/speakers',
+						item: 'https://www.oss4.ai/speakers',
 					},
 					{
 						position: 3,
 						name: speaker.name,
-						item: `https://oss4.ai/speaker/${speaker.slug}`,
+						item: `https://www.oss4.ai/speaker/${speaker.slug}`,
 					},
 				]}
 			/>
 			<JsonLd<WithContext<Person>> item={personStructuredData} />
 			<JsonLd<WithContext<Event>> item={eventStructuredData} />
 			<Head>
-				<link rel='canonical' href={`https://oss4.ai/speaker/${speaker.slug}`} />
+				<link rel='canonical' href={`https://www.oss4.ai/speaker/${speaker.slug}`} />
 			</Head>
 			{/* Google Analytics 4 */}
 			<Script src="https://www.googletagmanager.com/gtag/js?id=G-Y1G13WPJKZ" strategy="afterInteractive" />

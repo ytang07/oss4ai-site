@@ -68,7 +68,7 @@ export default function Home() {
 		'@type': 'WebSite',
 		name: 'OSS4AI',
 		description: 'Your one stop shop for getting a complete overview of AI Developer Tools.',
-		url: 'https://oss4.ai',
+		url: 'https://www.oss4.ai',
 	};
 
 	return (
@@ -84,8 +84,8 @@ export default function Home() {
 					property='og:description'
 					content='Join us to get a complete overview of the AI Developer Tool Ecosystem.'
 				/>
-				<meta property='og:image' content='https://oss4.ai/og-banner.png' />
-				<meta property='og:url' content='https://oss4.ai' />
+				<meta property='og:image' content='https://www.oss4.ai/og-banner.png' />
+				<meta property='og:url' content='https://www.oss4.ai' />
 				<meta name='twitter:card' content='summary_large_image' />
 				<meta name='twitter:site' content='@yujian_tang' />
 				<meta name='twitter:creator' content='@yujian_tang' />
@@ -123,14 +123,14 @@ export default function Home() {
 			<NextSeo
 				title='A Community for AI Developers'
 				description='Join the best AI Developer Community, featuring talks from companies building the future of technology. Hosted by Yujian Tang.'
-				canonical='https://oss4.ai'
+				canonical='https://www.oss4.ai'
 				openGraph={{
-					url: 'https://oss4.ai',
+					url: 'https://www.oss4.ai',
 					title: 'The Best AI Developer Community',
 					description: 'The only developer community dedicated to bringing you a complete view of the AI developer tool ecosystem. Hosted by Yujian Tang.',
 					images: [
 						{
-							url: 'https://oss4.ai/og-banner.png',
+							url: 'https://www.oss4.ai/og-banner.png',
 							width: 1686,
 							height: 1121,
 							alt: 'The Best AI Developer Community',
@@ -277,7 +277,7 @@ export default function Home() {
 				{/* Contact Information Section */}
 				<section className='my-24 px-8'>
 					<div className='max-w-6xl mx-auto'>
-						<h2 className='text-3xl font-semibold mb-6 text-[#420069]'>Who are we?</h2>
+						<h2 className='text-3xl font-semibold mb-6 text-[#420069]'>CONTACT</h2>
 						<div className='mt-4 ibm-plex-mono text-gray-800'>
 							<p className='pb-1'>
 								OSS4AI is led by Yujian Tang. Yujian Tang started software engineering at IBM at age 16, has published papers to conferences like IEEE Big Data, 
@@ -320,7 +320,7 @@ export default function Home() {
 					{
 						position: 1,
 						name: 'Home',
-						item: 'https://oss4.ai',
+						item: 'https://www.oss4.ai',
 					},
 				]}
 			/>

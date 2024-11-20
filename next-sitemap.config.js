@@ -1,5 +1,5 @@
 module.exports = {
-	siteUrl: 'https://oss4.ai',
+	siteUrl: 'https://www.oss4.ai',
 	generateRobotsTxt: true,
 	outDir: 'public',
 };

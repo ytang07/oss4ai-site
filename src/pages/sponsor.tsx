@@ -81,9 +81,9 @@ export default function Sponsor() {
             <NextSeo
                 title='Sponsorship Packages | Turing Minds Speaker Series'
                 description='Explore sponsorship opportunities for the Turing Minds Speaker Series. Support groundbreaking research and the future of technology.'
-                canonical='https://oss4.ai/sponsor'
+                canonical='https://www.oss4.ai/sponsor'
                 openGraph={{
-                    url: 'https://oss4.ai/sponsor',
+                    url: 'https://www.oss4.ai/sponsor',
                     title: 'Sponsorship Packages | Turing Minds Speaker Series',
                     description: 'Explore sponsorship opportunities for the Turing Minds Speaker Series. Support groundbreaking research and the future of technology.',
                     site_name: 'Turing Minds',

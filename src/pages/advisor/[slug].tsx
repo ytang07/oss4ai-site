@@ -36,7 +36,7 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 		description: advisor.description,
 		image: advisor.speakerPhoto,
 		jobTitle: advisor.distinction,
-		url: `https://oss4.ai/advisor/${advisor.slug}`,
+		url: `https://www.oss4.ai/advisor/${advisor.slug}`,
 		sameAs: [advisor.biographyLink],
 	};
 
@@ -50,7 +50,7 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 					description: advisor.description,
 					images: [{ url: advisor.speakerPhoto, alt: advisor.name }],
 					type: 'profile',
-					url: `https://oss4.ai/advisor/${advisor.slug}`,
+					url: `https://www.oss4.ai/advisor/${advisor.slug}`,
 				}}
 				twitter={{
 					cardType: 'summary_large_image',
@@ -61,23 +61,23 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 					{
 						position: 1,
 						name: 'Home',
-						item: 'https://oss4.ai',
+						item: 'https://www.oss4.ai',
 					},
 					{
 						position: 2,
 						name: 'Advisors',
-						item: 'https://oss4.ai/advisors',
+						item: 'https://www.oss4.ai/advisors',
 					},
 					{
 						position: 3,
 						name: advisor.name,
-						item: `https://oss4.ai/advisor/${advisor.slug}`,
+						item: `https://www.oss4.ai/advisor/${advisor.slug}`,
 					},
 				]}
 			/>
 			<JsonLd<WithContext<Person>> item={structuredData} />
 			<Head>
-				<link rel='canonical' href={`https://oss4.ai/advisor/${advisor.slug}`} />
+				<link rel='canonical' href={`https://www.oss4.ai/advisor/${advisor.slug}`} />
 			</Head>
 			{/* Google Analytics 4 */}
 			<Script src="https://www.googletagmanager.com/gtag/js?id=G-Y1G13WPJKZ" strategy="afterInteractive" />

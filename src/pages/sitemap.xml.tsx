@@ -5,7 +5,7 @@ import advisorsData from '../data/advisorsData2024.json';
 const Sitemap = () => {};
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const baseUrl = 'https://oss4.ai';
+  const baseUrl = 'https://www.oss4.ai';
 
   const staticPages = [
     '',
