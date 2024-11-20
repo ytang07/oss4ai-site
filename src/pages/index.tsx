@@ -1,9 +1,6 @@
 /* eslint-disable @next/next/next-script-for-ga */
 import Head from 'next/head';
-import SpeakerCards from '../components/SpeakerCards';
-import AdvisorCards from '../components/AdvisorCards';
 import PartnerCards from '../components/PartnerCards';
-import speakersData from '../data/speakersData2024.json';
 import companyData from '../data/companyData.json'
 import React, { useMemo } from 'react';
 import ScrollToTop from 'react-scroll-to-top';
@@ -208,7 +205,7 @@ export default function Home() {
 							About OSS4AI</h2>
 
 						<p className='ibm-plex-mono mb-6 md:mb-8 text-sm md:text-base'>
-							OSS4AI started out as a community for open source, but we've since evolved into a community dedicated to 
+							OSS4AI started out as a community for open source, but we`&apos`ve since evolved into a community dedicated to 
 							giving software developers a complete view of the AI developer tool ecosystem.
 							OSS4AI is run completely on partnerships with companies providing ardent support for developers. See our partners below.
 						</p>
