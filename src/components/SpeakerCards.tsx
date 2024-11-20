@@ -76,7 +76,7 @@ const SpeakerBio = ({ name, dateTime, description, rsvpLink, turingAwardWinner, 
 
 	return (
 		<div
-			className={`card drop-shadow-md rounded-sm bg-base-100 shadow-xl flex flex-col outline ${turingAwardWinner ? 'outline-[#a4925a]' : 'outline-[#013057]'} p-6`}
+			className={`card drop-shadow-md rounded-sm bg-base-100 shadow-xl flex flex-col outline ${turingAwardWinner ? 'outline-[#420069]' : 'outline-[#013057]'} p-6`}
 			onClick={() => router.push(`/speaker/${slug}`)}
 			style={{ cursor: 'pointer' }}
 		>

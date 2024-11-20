@@ -22,9 +22,9 @@ svg {
 
 .gradient-text {
 	/* Fallback for browsers that do not support gradient text */
-	color: #a4925a;
+	color: #420069;
 
-	background: linear-gradient(to right, #a4925a, #d3b07d);
+	background: linear-gradient(to right, #420069, #d3b07d);
 
 	/* Ensure compatibility with non-webkit browsers */
 	background-clip: text;

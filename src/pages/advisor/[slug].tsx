@@ -36,7 +36,7 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 		description: advisor.description,
 		image: advisor.speakerPhoto,
 		jobTitle: advisor.distinction,
-		url: `https://turing.rsvp/advisor/${advisor.slug}`,
+		url: `https://oss4.ai/advisor/${advisor.slug}`,
 		sameAs: [advisor.biographyLink],
 	};
 
@@ -50,7 +50,7 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 					description: advisor.description,
 					images: [{ url: advisor.speakerPhoto, alt: advisor.name }],
 					type: 'profile',
-					url: `https://turing.rsvp/advisor/${advisor.slug}`,
+					url: `https://oss4.ai/advisor/${advisor.slug}`,
 				}}
 				twitter={{
 					cardType: 'summary_large_image',
@@ -61,23 +61,23 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 					{
 						position: 1,
 						name: 'Home',
-						item: 'https://turing.rsvp',
+						item: 'https://oss4.ai',
 					},
 					{
 						position: 2,
 						name: 'Advisors',
-						item: 'https://turing.rsvp/advisors',
+						item: 'https://oss4.ai/advisors',
 					},
 					{
 						position: 3,
 						name: advisor.name,
-						item: `https://turing.rsvp/advisor/${advisor.slug}`,
+						item: `https://oss4.ai/advisor/${advisor.slug}`,
 					},
 				]}
 			/>
 			<JsonLd<WithContext<Person>> item={structuredData} />
 			<Head>
-				<link rel='canonical' href={`https://turing.rsvp/advisor/${advisor.slug}`} />
+				<link rel='canonical' href={`https://oss4.ai/advisor/${advisor.slug}`} />
 			</Head>
 			{/* Google Analytics 4 */}
 			<Script src="https://www.googletagmanager.com/gtag/js?id=G-Y1G13WPJKZ" strategy="afterInteractive" />
@@ -95,12 +95,12 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 					<div className='bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-lg p-4 md:p-8 shadow-lg'>
 						<div className='flex justify-between items-center mb-4 md:mb-6'>
 							<div className='flex items-center'>
-								<Link href='/' className='text-[#013057] hover:text-[#a4925a] transition-colors duration-300 mr-4'>
+								<Link href='/' className='text-[#013057] hover:text-[#420069] transition-colors duration-300 mr-4'>
 									<FaChevronLeft size={24} />
 								</Link>
-								<h1 className='text-3xl md:text-4xl font-bold text-[#a4925a]'>{advisor.name}</h1>
+								<h1 className='text-3xl md:text-4xl font-bold text-[#420069]'>{advisor.name}</h1>
 							</div>
-							<Link href='/share' className='text-[#013057] hover:text-[#a4925a] transition-colors duration-300 flex flex-col items-center'>
+							<Link href='/share' className='text-[#013057] hover:text-[#420069] transition-colors duration-300 flex flex-col items-center'>
 								<FaShare size={24} />
 								<span className='text-[8px] uppercase mt-1 text-black font-bold tracking-widest'>SHARE</span>
 							</Link>
@@ -113,7 +113,7 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 						<div className='text-center'>
 							<a
 								href={advisor.biographyLink}
-								className='text-[#013057] underline hover:text-[#a4925a] transition-colors duration-300 text-sm md:text-base'
+								className='text-[#013057] underline hover:text-[#420069] transition-colors duration-300 text-sm md:text-base'
 								target='_blank'
 								rel='noopener noreferrer'
 							>
@@ -123,7 +123,7 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 
 						{/* Render markdown biography */}
 						<section className='mt-8 md:mt-12'>
-							<h2 className='text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-[#a4925a] text-center'>Biography</h2>
+							<h2 className='text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-[#420069] text-center'>Biography</h2>
 							<ReactMarkdown remarkPlugins={[remarkGfm]} className='prose prose-sm md:prose-base prose-blue max-w-none ibm-plex-mono text-gray-800'>
 								{advisor.markdownBiography}
 							</ReactMarkdown>
@@ -131,7 +131,7 @@ const AdvisorPage = ({ advisor }: { advisor: any }) => {
 
 						{/* Render markdown timeline */}
 						<section className='mt-8 md:mt-12'>
-							<h2 className='text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-[#a4925a] text-center'>Career Timeline</h2>
+							<h2 className='text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-[#420069] text-center'>Career Timeline</h2>
 							<ReactMarkdown remarkPlugins={[remarkGfm]} className='prose prose-sm md:prose-base prose-blue max-w-none ibm-plex-mono text-gray-800'>
 								{advisor.markdownTimeline}
 							</ReactMarkdown>

@@ -1,5 +1,3 @@
-# OMSCS Turing Award Speaker Series
+# OSS4AI Landing Page
 
-A static NextJS website for the Turing Award speaker series.
-
-Built and maintained by Parsa Khazaeepoul.
+Landing Page for OSS4AI Community

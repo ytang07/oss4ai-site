@@ -17,8 +17,8 @@ export default function SharePage() {
 		if (navigator.share) {
 			try {
 				await navigator.share({
-					title: 'Turing RSVP',
-					url: 'https://www.turing.rsvp/',
+					title: 'OSS4AI',
+					url: 'https://www.oss4.ai/',
 				});
 				console.log('Content shared successfully');
 				confetti && confetti.addConfetti();
@@ -39,13 +39,13 @@ export default function SharePage() {
 				<div className='text-center py-4 px-4'>
 					<button
 						onClick={handleShare}
-						className='bg-white text-indigo-500 underline text-xl md:text-3xl ibm-plex-mono font-semibold py-2 px-4 rounded-lg hover:bg-[#a4925a] hover:text-white transition duration-300'
+						className='bg-white text-indigo-500 underline text-xl md:text-3xl ibm-plex-mono font-semibold py-2 px-4 rounded-lg hover:bg-[#420069] hover:text-white transition duration-300'
 					>
-						Share Turing Award Speaker Series
+						Share OSS4AI Community
 					</button>
 				</div>
 				<a href='/' target='_blank' className='text-white text-md md:text-lg text-center italic ibm-plex-mono font-semibold py-2 px-2'>
-					click me to navigate back to turing.rsvp
+					click me to navigate back to oss4.ai
 				</a>
 			</div>
 			{/* Google Analytics 4 */}

@@ -76,7 +76,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 		name: speaker.name,
 		description: speaker.description,
 		image: speaker.speakerPhoto,
-		url: `https://turing.rsvp/speaker/${speaker.slug}`,
+		url: `https://oss4.ai/speaker/${speaker.slug}`,
 	};
 
 	const eventStructuredData: WithContext<Event> = {
@@ -101,7 +101,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 		organizer: {
 			'@type': 'Organization',
 			name: 'Turing',
-			url: 'https://turing.rsvp',
+			url: 'https://oss4.ai',
 		},
 	};
 
@@ -115,7 +115,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 					description: speaker.description,
 					images: [{ url: speaker.speakerPhoto, alt: speaker.name }],
 					type: 'website',
-					url: `https://turing.rsvp/speaker/${speaker.slug}`,
+					url: `https://oss4.ai/speaker/${speaker.slug}`,
 				}}
 				twitter={{
 					cardType: 'summary_large_image',
@@ -126,24 +126,24 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 					{
 						position: 1,
 						name: 'Home',
-						item: 'https://turing.rsvp',
+						item: 'https://oss4.ai',
 					},
 					{
 						position: 2,
 						name: 'Speakers',
-						item: 'https://turing.rsvp/speakers',
+						item: 'https://oss4.ai/speakers',
 					},
 					{
 						position: 3,
 						name: speaker.name,
-						item: `https://turing.rsvp/speaker/${speaker.slug}`,
+						item: `https://oss4.ai/speaker/${speaker.slug}`,
 					},
 				]}
 			/>
 			<JsonLd<WithContext<Person>> item={personStructuredData} />
 			<JsonLd<WithContext<Event>> item={eventStructuredData} />
 			<Head>
-				<link rel='canonical' href={`https://turing.rsvp/speaker/${speaker.slug}`} />
+				<link rel='canonical' href={`https://oss4.ai/speaker/${speaker.slug}`} />
 			</Head>
 			{/* Google Analytics 4 */}
 			<Script src="https://www.googletagmanager.com/gtag/js?id=G-Y1G13WPJKZ" strategy="afterInteractive" />
@@ -161,12 +161,12 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 					<div className='bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-lg p-4 md:p-8 shadow-lg'>
 						<div className='flex justify-between items-center mb-4 md:mb-6'>
 							<div className='flex items-center'>
-								<Link href='/' className='text-[#013057] hover:text-[#a4925a] transition-colors duration-300 mr-4'>
+								<Link href='/' className='text-[#013057] hover:text-[#420069] transition-colors duration-300 mr-4'>
 									<FaChevronLeft size={24} />
 								</Link>
-								<h1 className='text-3xl md:text-4xl font-bold text-[#a4925a]'>{speaker.name}</h1>
+								<h1 className='text-3xl md:text-4xl font-bold text-[#420069]'>{speaker.name}</h1>
 							</div>
-							<Link href='/share' className='text-[#013057] hover:text-[#a4925a] transition-colors duration-300 flex flex-col items-center'>
+							<Link href='/share' className='text-[#013057] hover:text-[#420069] transition-colors duration-300 flex flex-col items-center'>
 								<FaShare size={24} />
 								<span className='text-[8px] uppercase mt-1 text-black font-bold tracking-widest'>SHARE</span>
 							</Link>
@@ -180,7 +180,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 							<p className='mb-4 text-center'>
 								<a
 									href={speaker.turingLink}
-									className='text-[#013057] underline hover:text-[#a4925a] transition-colors duration-300 text-sm md:text-base'
+									className='text-[#013057] underline hover:text-[#420069] transition-colors duration-300 text-sm md:text-base'
 									target='_blank'
 									rel='noopener noreferrer'
 								>
@@ -204,7 +204,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 									{showWatchNow && (
 										<a
 											href={speaker.recordingLink}
-											className='bg-[#013057] text-white px-6 py-3 rounded text-lg font-bold hover:bg-[#a4925a] transition-colors duration-300 inline-block mx-auto'
+											className='bg-[#013057] text-white px-6 py-3 rounded text-lg font-bold hover:bg-[#420069] transition-colors duration-300 inline-block mx-auto'
 											target='_blank'
 											rel='noopener noreferrer'
 										>
@@ -222,7 +222,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 									{showRSVP && (
 										<a
 											href={speaker.rsvpLink}
-											className='bg-[#013057] text-white px-6 py-3 rounded text-l font-bold hover:bg-[#a4925a] transition-colors duration-300 inline-block mx-auto'
+											className='bg-[#013057] text-white px-6 py-3 rounded text-l font-bold hover:bg-[#420069] transition-colors duration-300 inline-block mx-auto'
 											target='_blank'
 											rel='noopener noreferrer'
 										>
@@ -241,7 +241,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 
 						{/* Render markdown biography */}
 						<section className='mt-8 md:mt-12'>
-							<h2 className='text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-[#a4925a] text-center'>Biography</h2>
+							<h2 className='text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-[#420069] text-center'>Biography</h2>
 							<ReactMarkdown remarkPlugins={[remarkGfm]} className='prose prose-sm md:prose-base prose-blue max-w-none ibm-plex-mono text-gray-800'>
 								{speaker.markdownBiography}
 							</ReactMarkdown>
@@ -249,7 +249,7 @@ const SpeakerPage = ({ speaker }: { speaker: any }) => {
 
 						{/* Render markdown timeline */}
 						<section className='mt-8 md:mt-12'>
-							<h2 className='text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-[#a4925a] text-center'>Career Timeline</h2>
+							<h2 className='text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-[#420069] text-center'>Career Timeline</h2>
 							<ReactMarkdown remarkPlugins={[remarkGfm]} className='prose prose-sm md:prose-base prose-blue max-w-none ibm-plex-mono text-gray-800'>
 								{speaker.markdownTimeline}
 							</ReactMarkdown>
