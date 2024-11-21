@@ -86,6 +86,8 @@ export default function Home() {
 				<meta name='twitter:card' content='summary_large_image' />
 				<meta name='twitter:site' content='@yujian_tang' />
 				<meta name='twitter:creator' content='@yujian_tang' />
+				<meta charSet="UTF-8"/> 
+				<meta name="viewport" content="width=device-width, initial-scale=1"/> 
 
 				{/* Google Tag Manager */}
 				<script

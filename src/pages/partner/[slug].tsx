@@ -8,8 +8,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { NextSeo, BreadcrumbJsonLd } from 'next-seo';
 import { JsonLd } from 'react-schemaorg';
-import { Organization, Person, WithContext } from 'schema-dts';
-// import SidebarGallery from '../../components/SidebarGallery';
+import { Organization, WithContext } from 'schema-dts';
+import SidebarGallery from '../../components/SidebarGallery';
 import Link from 'next/link';
 import { FaChevronLeft, FaShare } from 'react-icons/fa';
 
@@ -135,9 +135,9 @@ const PartnerPage = ({ company }: { company: any }) => {
 						</section> */}
 					</div>
 				</article>
-				{/* <aside className='hidden lg:block mt-8'>
-					<SidebarGallery currentSpeaker={company.name} partners={companyData} />
-				</aside> */}
+				<aside className='hidden lg:block mt-8'>
+					<SidebarGallery currentCompany={company.name} partners={companyData.filter((companyData) => companyData.isCommunitySponsor)} participants={companyData.filter((companyData) => !companyData.isCommunitySponsor)} />
+				</aside>
 			</div>
 		</>
 	);

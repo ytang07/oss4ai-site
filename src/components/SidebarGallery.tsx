@@ -6,17 +6,16 @@ import { FaUsers, FaTimes } from 'react-icons/fa';
 type GalleryItem = {
 	name: string;
 	slug: string;
-	speakerPhoto: string;
-	distinction?: string;
+	companyLogo: string;
 };
 
 type SidebarGalleryProps = {
-	currentSpeaker: string;
-	speakers: GalleryItem[];
-	advisors: GalleryItem[];
+	currentCompany: string;
+	partners: GalleryItem[];
+	participants: GalleryItem[];
 };
 
-const SidebarGallery: React.FC<SidebarGalleryProps> = ({ currentSpeaker, speakers, advisors }) => {
+const SidebarGallery: React.FC<SidebarGalleryProps> = ({ currentCompany, partners, participants }) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 
@@ -24,21 +23,35 @@ const SidebarGallery: React.FC<SidebarGalleryProps> = ({ currentSpeaker, speaker
 		setIsMounted(true);
 	}, []);
 
-	const allItems = [...speakers.map((s) => ({ ...s, type: 'speaker' })), ...advisors.map((a) => ({ ...a, type: 'advisor' }))].filter((item) => item.name !== currentSpeaker);
+	const otherPartners =  [...partners.map((s) => ({ ...s, type: 'partner' }))].filter((item) => item.name != currentCompany)
+	const otherParticipants =  [...participants.map((s) => ({ ...s, type: 'participant' }))].filter((item) => item.name != currentCompany)
 
 	const toggleSidebar = () => setIsOpen(!isOpen);
 
 	const renderGalleryContent = () => (
 		<div className='space-y-4 overflow-y-auto flex-grow'>
-			{allItems.map((item) => (
+			<div className='font-bold text-lg flex items-center space-x-3 p-2 rounded-lg'>Community Partners</div>
+			{otherPartners.map((item) => (
 				<Link href={`/${item.type}/${item.slug}`} key={item.slug}>
 					<div className='flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300'>
 						<div className='relative w-12 h-12 flex-shrink-0'>
-							<Image src={item.speakerPhoto} layout='fill' objectFit='cover' alt={item.name} className='rounded-full' />
+							<Image src={item.companyLogo} layout='fill' objectFit='contain' alt={item.name} className='rounded-full' />
 						</div>
 						<div>
 							<p className='font-semibold text-sm text-[#013057]'>{item.name}</p>
-							{item.distinction && <p className='text-xs text-gray-600'>{item.distinction}</p>}
+						</div>
+					</div>
+				</Link>
+			))}
+			<div className="font-bold text-lg flex items-center space-x-3 p-2 rounded-lg">Participant Companies</div>
+			{otherParticipants.map((item) => (
+				<Link href={`/${item.type}/${item.slug}`} key={item.slug}>
+					<div className='flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300'>
+						<div className='relative w-12 h-12 flex-shrink-0'>
+							<Image src={item.companyLogo} layout='fill' objectFit='contain' alt={item.name} className='rounded-full' />
+						</div>
+						<div>
+							<p className='font-semibold text-sm text-[#013057]'>{item.name}</p>
 						</div>
 					</div>
 				</Link>
@@ -69,15 +82,16 @@ const SidebarGallery: React.FC<SidebarGalleryProps> = ({ currentSpeaker, speaker
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
         `}
 			>
-				<div className='h-full flex flex-col'>
+				{/* <div className='h-full flex flex-col'>
 					<div className='p-4 flex justify-between items-center border-b'>
-						<h2 className='text-xl font-bold text-[#013057]'>More Speakers</h2>
+						<h2 className='text-xl font-bold text-[#013057]'>See more</h2>
 						<button onClick={toggleSidebar} className='text-[#013057]'>
 							<FaTimes className='w-6 h-6' />
 						</button>
 					</div>
-					<div className='flex-grow overflow-y-auto p-4'>{renderGalleryContent()}</div>
-				</div>
+					<div className='h-full flex flex-col flex-grow overflow-y-auto p-4'>{renderGalleryContent()}</div>
+				</div> */}
+				<div className='h-full flex flex-col flex-grow overflow-y-auto p-4'>{renderGalleryContent()}</div>
 			</div>
 		</>
 	);
