@@ -81,7 +81,7 @@ export default function Home() {
 					property='og:description'
 					content='Join us to get a complete overview of the AI Developer Tool Ecosystem.'
 				/>
-				<meta property='og:image' content='https://www.oss4.ai/og-banner.png' />
+				{/* <meta property='og:image' content='https://www.oss4.ai/og-banner.png' /> */}
 				<meta property='og:url' content='https://www.oss4.ai' />
 				<meta name='twitter:card' content='summary_large_image' />
 				<meta name='twitter:site' content='@yujian_tang' />
@@ -127,14 +127,14 @@ export default function Home() {
 					url: 'https://www.oss4.ai',
 					title: 'The Best AI Developer Community',
 					description: 'The only developer community dedicated to bringing you a complete view of the AI developer tool ecosystem. Hosted by Yujian Tang.',
-					images: [
-						{
-							url: 'https://www.oss4.ai/og-banner.png',
-							width: 1686,
-							height: 1121,
-							alt: 'The Best AI Developer Community',
-						},
-					],
+					// images: [
+					// 	{
+					// 		url: 'https://www.oss4.ai/og-banner.png',
+					// 		width: 1686,
+					// 		height: 1121,
+					// 		alt: 'The Best AI Developer Community',
+					// 	},
+					// ],
 					site_name: 'OSS4AI',
 				}}
 				twitter={{

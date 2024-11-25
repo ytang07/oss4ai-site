@@ -27,6 +27,14 @@
         "isDeveloperTool": "No"
     },
     {
+        "name": "Protecto",
+        "companyLogo": "/company-logos/protectoai_logo.jpeg",
+        "description": "",
+        "slug": "protecto",
+        "website": "",
+        "projects": ""
+    },
+    {
         "name": "Boundary",
         "companyLogo": "/company-logos/baml_logo.webp",
         "description": "",
