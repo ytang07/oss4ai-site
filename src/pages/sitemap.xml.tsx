@@ -1,6 +1,5 @@
 import { GetServerSideProps } from 'next';
-import speakersData from '../data/speakersData2024.json';
-import advisorsData from '../data/advisorsData2024.json';
+import companyData from '../data/companyData.json';
 
 const Sitemap = () => {};
 
@@ -9,10 +8,10 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
 
   const staticPages = [
     '',
-    '/speakers',
-    '/advisors',
-    '/faq',
-    '/contact',
+    '/partners',
+    '/participants',
+    // '/faq',
+    // '/contact',
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -29,11 +28,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
           `;
         })
         .join('')}
-      ${speakersData
-        .map((speaker) => {
+      ${companyData.filter(companyData => companyData.isCommunitySponsor)
+        .map((partner) => {
           return `
             <url>
-              <loc>${baseUrl}/speaker/${speaker.slug}</loc>
+              <loc>${baseUrl}/partner/${partner.slug}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
               <changefreq>weekly</changefreq>
               <priority>0.8</priority>
@@ -41,11 +40,11 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
           `;
         })
         .join('')}
-      ${advisorsData
-        .map((advisor) => {
+      ${companyData.filter(companyData => !companyData.isCommunitySponsor)
+        .map((participant) => {
           return `
             <url>
-              <loc>${baseUrl}/advisor/${advisor.slug}</loc>
+              <loc>${baseUrl}/participant/${participant.slug}</loc>
               <lastmod>${new Date().toISOString()}</lastmod>
               <changefreq>monthly</changefreq>
               <priority>0.6</priority>
