@@ -168,7 +168,7 @@ export default function Home() {
 				{/* Updated header with 3D elements */}
 				<header className='min-h-screen flex flex-col relative'>
 					<div className='top-0 left-0 right-0 z-50 bg-white bg-opacity-90 backdrop-filter backdrop-blur-lg md:relative md:bg-transparent md:backdrop-filter-none'>
-						<div className='text-center py-4 md:mb-16 md:pt-64'>
+						<div className='text-center py-4 md:mb-16 md:pt-32'>
 							{/* <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className='text-lg py-2 font-light mb-2 text-gray-600'>
 								OSS4AI
 							</motion.div> */}
@@ -180,7 +180,7 @@ export default function Home() {
 							>
 								<span className='relative z-10 text-[#420069]'>A Complete View of the AI Developer Tool Ecosystem</span>
 								<motion.span
-									className='absolute inset-0 text-[#069420] opacity-50 hidden md:inline-block'
+									className='absolute inset-0 text-[#069420] opacity-20 hidden md:inline-block' /* Opacity reduced */
 									animate={{ x: [0, 5, 0], y: [0, 5, 0] }}
 									transition={{ repeat: Infinity, duration: 5 }}
 									style={{ zIndex: -1 }}
@@ -201,7 +201,7 @@ export default function Home() {
 						initial={{ opacity: 0, y: 50 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ delay: 0.7, duration: 0.8 }}
-						className='w-full justify-center max-w-4xl mx-auto bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-lg p-4 md:p-8 md:pl-24 mt-48 md:mt-16 md:static'
+						className='w-full justify-center max-w-4xl mx-auto bg-white bg-opacity-70 backdrop-filter backdrop-blur-lg rounded-lg p-4 md:p-8 md:pl-24 mt-24 md:mt-16 md:static' /* Adjusted mt */
 					>
 						<h2 className='text-2xl md:text-3xl font-semibold mb-4 bg-clip-text text-transparent bg-gradient-to-r text-[#420069] from-[#420069] to-[#d4af37]'>
 							About OSS4AI</h2>
@@ -213,25 +213,25 @@ export default function Home() {
 						</p>
 						{/* Updated navigation buttons */}
 						<div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-5'>
-							<Link href='https://lu.ma/oss4ai' className='outline-[#420069] outline px-4 py-2 italic hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>
+							<Link href='https://lu.ma/oss4ai' className='px-4 py-2 italic rounded-md border border-[#420069] text-[#420069] hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>
 								UPCOMING EVENTS
 							</Link>
-							<Link href='#contact' className='outline-[#420069] outline px-4 py-2 italic hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>
+							<Link href='#contact' className='px-4 py-2 italic rounded-md border border-[#420069] text-[#420069] hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>
 								CONTACT US
 							</Link>
-							<Link href='#recordings' className='outline-[#420069] outline px-4 py-2 italic hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>
+							<Link href='#recordings' className='px-4 py-2 italic rounded-md border border-[#420069] text-[#420069] hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>
 								RECORDINGS
 							</Link>
-							<Link href='#partnerCards' className='outline-[#420069] outline px-4 py-2 italic hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>
+							<Link href='#partnerCards' className='px-4 py-2 italic rounded-md border border-[#420069] text-[#420069] hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>
 								PARTNERS
 							</Link>
-							<Link href='/share' className='outline-[#420069] outline px-4 py-2 italic hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>SHARE</Link>
+							<Link href='/share' className='px-4 py-2 italic rounded-md border border-[#420069] text-[#420069] hover:bg-[#420069] hover:text-white transition-colors duration-300 text-center'>SHARE</Link>
 						</div>
 					</motion.div>
 				</header>
 
 				{/* Partner Cards */}
-				<section id='partnerCards' className='mx-auto px-8 my-6 grid grid-cols-1 md:grid-cols-2 gap-4'>
+				<section id='partnerCards' className='mx-auto px-8 my-16 grid grid-cols-1 md:grid-cols-2 gap-4'> {/* Adjusted my */}
 					<div className='col-span-full mb-4 flex items-center justify-center text-gray-600 py-2'>
 						<FaInfoCircle className='mr-2' />
 						<span className='text-sm'>Click on a Partner card to view their detailed description</span>
@@ -241,37 +241,20 @@ export default function Home() {
 					))}
 				</section>
 				
-				<section id="recordings">
+				<section id="recordings" className='my-16'> {/* Added my */}
 					<div className='col-span-full mb-4 flex items-center justify-center text-gray-600 py-2'>
 						<h2 className="text-xl">2 minute demos from companies that have pitched at our events!</h2>
 					</div>
 					<div className="col-span-full mb-4 flex items-center justify-center text-gray-600 py-2">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=nRw_AWzlWW-JUuM6&amp;list=PLKiU8vyKB6tiWH-F8aHH8xKNacs8pMRA9" title="2 Minute Startup Pitches" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=nRw_AWzlWW-JUuM6&list=PLKiU8vyKB6tiWH-F8aHH8xKNacs8pMRA9" title="2 Minute Startup Pitches" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 					</div>
 					<div className='col-span-full mb-4 flex items-center justify-center text-gray-600 py-2'>
 						<h2 className="text-xl">Longer tech talks from in person and online events</h2>
 					</div>
 					<div className="col-span-full mb-4 flex items-center justify-center text-gray-600 py-2">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=2zAG4XAOMSTXwCLi&amp;list=PLKiU8vyKB6tj5tYJShMrG9JrmTLYcavj8" title="Gen AI Tech Talks" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=2zAG4XAOMSTXwCLi&list=PLKiU8vyKB6tj5tYJShMrG9JrmTLYcavj8" title="Gen AI Tech Talks" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
 					</div>
 				</section>
-
-				{/* Program Advisors */}
-				{/* <section className='my-24 px-8'>
-					<div className='max-w-6xl mx-auto '>
-						<h2 className='text-3xl font-semibold mb-6 text-[#420069]'>Speaker Series Advisors</h2>
-						<p className='ibm-plex-mono mt-4 text-gray-800'> These are the people who helped make this event possible.</p>
-						<div className='col-span-full mb-4 flex items-center justify-center text-gray-600 py-2'>
-							<FaInfoCircle className='mr-2' />
-							<span className='text-sm'>Click on an advisor card to view their detailed biography</span>
-						</div>
-						<div id='programAdvisors' className='my-6 grid grid-cols-1 md:grid-cols-2 gap-4'>
-							{advisorsData.map((advisor, index) => (
-								<MemoizedAdvisorCards key={index} {...advisor} />
-							))}
-						</div>
-					</div>
-				</section> */}
 
 				{/* Contact Information Section */}
 				<section className='my-24 px-8'>

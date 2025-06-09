@@ -17,7 +17,7 @@ const PartnerCards = ({ name, companyLogo, description, slug, website, projects,
 
 	return (
 		<div
-			className='card drop-shadow-md rounded-sm bg-base-100 shadow-xl flex flex-col outline outline-[#420069] p-6'
+			className='card drop-shadow-md rounded-lg bg-base-100 shadow-lg flex flex-col p-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl'
 			onClick={() => router.push(`/partner/${slug}`)}
 			style={{ cursor: 'pointer' }}
 		>
