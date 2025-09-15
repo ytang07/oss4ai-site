@@ -1,18 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: __dirname,
   images: {
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'www.oss4.ai',
+        protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+        pathname: "**"
+      },
+      {
+        protocol: "https",
+        hostname: "www.notion.so", // Notion domain for images
+      },
+      {
+        protocol: "https",
+        hostname: "prod-files-secure.s3.amazonaws.com", // Notion domain for files
       },
     ],
-    path: '/_next/image',
-    loader: 'default',
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
