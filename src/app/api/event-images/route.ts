@@ -6,7 +6,7 @@ const notion = new Client({
   auth: process.env.NOTION_API_KEY!,
 });
 
-const databaseId = process.env.NEXT_PUBLIC_NOTION_EVENT_DATABASE_ID!;
+const databaseId = process.env.NOTION_EVENT_DATABASE_ID!;
 
 export async function GET() {
   try {

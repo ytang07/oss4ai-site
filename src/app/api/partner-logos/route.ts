@@ -7,7 +7,7 @@ const notion = new Client({
 });
 
 // Use the partner database ID from environment variables
-const databaseId = process.env.NEXT_PUBLIC_NOTION_PARTNERS_DATABASE_ID!;
+const databaseId = process.env.NOTION_PARTNERS_DATABASE_ID!;
 
 export async function GET() {
   try {

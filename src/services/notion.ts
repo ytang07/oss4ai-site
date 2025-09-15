@@ -1,5 +1,3 @@
-import { Client } from "@notionhq/client";
-
 export async function getEventImages() {
   try {
     const response = await fetch('/api/event-images');
