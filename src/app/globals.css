@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #020316; /* Dark Neutral */
-  --foreground: #D4AA70; /* Light Neutral */
-  --primary-color: #5C2755; /* Primary (swapped) */
-  --secondary-color: #783014; /* Accent (swapped) */
-  --accent-color: #6A7543; /* Secondary (swapped) */
+  --background: #f0f0f0; /* Light Grey */
+  --foreground: #000000; /* Black Text */
+  --primary-color: #008080; /* Teal */
+  --secondary-color: #FFA500; /* Bright Orange */
+  --accent-color: #6A7543; /* Secondary (swapped) - keeping as is for now */
 }
 
 @theme inline {
@@ -18,7 +18,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #020316; /* Dark Neutral */
-    --foreground: #D4AA70; /* Light Neutral */
+    --foreground: #f0f0f0; /* Light Neutral for dark mode */
   }
 }
 
