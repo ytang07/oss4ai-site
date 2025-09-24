@@ -50,49 +50,49 @@ const PartnerLogos: React.FC = () => {
   }
 
   // Settings for the carousel
-const settings = {
-  dots: false, // Hide dots
-  infinite: true, // Enable infinite loop
-  speed: 500, // Transition speed in ms
-  slidesToShow: 5, // Number of slides to show at once
-  slidesToScroll: 1, // Number of slides to scroll at once
-  autoplay: true, // Enable autoplay
-  autoplaySpeed: 2000, // Autoplay speed in ms
-  arrows: false, // Hide arrows
-  responsive: [
-    {
-      breakpoint: 1024, // tablet breakpoint
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false,
-        arrows: false,
+  const settings = {
+    dots: false, // Hide dots
+    infinite: true, // Enable infinite loop
+    speed: 500, // Transition speed in ms
+    slidesToShow: 5, // Number of slides to show at once
+    slidesToScroll: 1, // Number of slides to scroll at once
+    autoplay: true, // Enable autoplay
+    autoplaySpeed: 100, // Set to 0 for constant movement, or a very small number
+    arrows: false, // Hide arrows
+    responsive: [
+      {
+        breakpoint: 1024, // tablet breakpoint
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 600, // mobile breakpoint
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          initialSlide: 2,
+          infinite: true,
+          dots: false,
+          arrows: false,
+        }
+      },
+      {
+        breakpoint: 480, // smaller mobile breakpoint
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+          arrows: false,
+        }
       }
-    },
-    {
-      breakpoint: 600, // mobile breakpoint
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        initialSlide: 2,
-        infinite: true,
-        dots: false,
-        arrows: false,
-      }
-    },
-    {
-      breakpoint: 480, // smaller mobile breakpoint
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false,
-        arrows: false,
-      }
-    }
-  ]
-};
+    ]
+  };
 
   return (
     <div className="partner-logos-container py-16 px-4 md:px-8 bg-[var(--background)]"> {/* Changed background to dark gray */}
@@ -103,9 +103,8 @@ const settings = {
             <div className="logo-item">
               {partner.logoUrl ? (
                 <img src={partner.logoUrl} alt={`${partner.name} logo`} className="partner-logo-img" />
-              ) : (
-                <span>{partner.name}</span>
-              )}
+              ) : null}
+              <span className="company-name">{partner.name}</span>
             </div>
           </div>
         ))}
@@ -122,12 +121,12 @@ const settings = {
         }
         .logo-item {
           display: flex;
+          flex-direction: column; /* Stack logo and name vertically */
           align-items: center;
           justify-content: center;
-          padding: 10px;
-          border: 1px solid var(--foreground); /* Keep border light for contrast */
+          padding: 20px;
           border-radius: 8px;
-          background-color: var(--foreground); /* Keep background of individual logo item white */
+          background-color: var(--background); /* Keep background of individual logo item white */
           min-width: 150px; /* Ensure a minimum width for each item */
           height: 150px; /* Fixed height for consistency */
           margin: 0 auto; /* Center the item if it's smaller than its container */
@@ -140,6 +139,7 @@ const settings = {
         .logo-item span {
           font-weight: bold;
           color: var(--foreground); /* Keep text color dark */
+          margin-top: 12px; /* Increased margin for better separation */
         }
         /* Custom styles for slick-carousel */
         .slick-slide > div {

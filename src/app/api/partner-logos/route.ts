@@ -33,7 +33,7 @@ export async function GET() {
     const partners = await Promise.all(pagesResponse.results.map(async (page: any) => {
       const properties = page.properties;
       // Extract Name and Logo URL from the properties
-      const name = properties.Name?.title?.[0]?.plain_text || 'Untitled Partner';
+      const name = properties['Company Name']?.title?.[0]?.plain_text || 'Untitled Partner';
       const logoUrl = properties.Logo?.url || null; // Assuming 'Logo' is the property name for the logo URL
 
       return {
