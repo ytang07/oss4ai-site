@@ -13,8 +13,8 @@ export default function Home() {
           {/* Removed background overlay to ensure global background is visible */}
           <div className="relative z-10 text-[var(--foreground)] px-4">
             <h1 className="text-5xl md:text-7xl font-bold mb-4">Open Source for AI</h1>
-            <p className="text-xl md:text-2xl mb-8">
-              Join our community and shape the future of AI together.
+            <p className="text-l md:text-2xl mb-8">
+              Providing builders the resources to understand, use, and contribute to the development and direction of AI.
             </p>
             <a
               href="https://lu.ma/oss4ai"
