@@ -1,11 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f0f0f0; /* Light Grey */
-  --foreground: #000000; /* Black Text */
-  --primary-color: #008080; /* Teal */
-  --secondary-color: #FFA500; /* Bright Orange */
-  --accent-color: #6A7543; /* Secondary (swapped) - keeping as is for now */
+  --font-geist-sans: Arial, Helvetica, sans-serif;
+  --font-geist-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --background: #07111f;
+  --surface: #0d1d31;
+  --surface-light: #132943;
+  --foreground: #f4f7fb;
+  --muted: #9cafc5;
+  --primary-color: #4db8ff;
+  --secondary-color: #8ce5d3;
+  --accent-color: #ffda76;
+  --line: rgba(175, 214, 245, 0.22);
 }
 
 @theme inline {
@@ -15,27 +21,66 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #020316; /* Dark Neutral */
-    --foreground: #f0f0f0; /* Light Neutral for dark mode */
-  }
-}
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-direction: column;
   min-height: 100vh;
 }
 
-/* Add any additional global styles here */
-.scrollbar-hide {
-  -ms-overflow-style: none;  /* IE andмага */
-  scrollbar-width: none;  /* Firefox */
+a { transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+
+.site-shell {
+  background: radial-gradient(circle at 78% 11%, rgba(49, 133, 196, .16), transparent 27rem), var(--background);
 }
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Chrome, Safari, Opera */
+
+.display-face { letter-spacing: -.065em; line-height: .94; }
+
+.eyebrow {
+  color: var(--primary-color);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.section-rule { border-top: 1px solid var(--line); }
+
+.text-muted { color: var(--muted); }
+
+.button-primary {
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 999px;
+  color: #061222;
+  display: inline-flex;
+  font-size: .84rem;
+  font-weight: 800;
+  gap: .65rem;
+  padding: .88rem 1.25rem;
+}
+
+.button-primary:hover { background: var(--secondary-color); transform: translateY(-2px); }
+
+.button-ghost {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--foreground);
+  font-size: .84rem;
+  font-weight: 700;
+  padding: .82rem 1.15rem;
+}
+
+.button-ghost:hover { border-color: var(--primary-color); color: var(--primary-color); }
+
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+@media (max-width: 640px) {
+  .display-face { letter-spacing: -.055em; }
 }

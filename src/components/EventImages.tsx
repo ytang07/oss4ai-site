@@ -46,15 +46,15 @@ const EventImages: React.FC = () => {
   }, [images, loading, error]);
 
   if (loading) {
-    return <div className="text-center py-16">Loading event images...</div>;
+    return <div id="events" className="mx-auto max-w-7xl px-5 py-24 text-center text-[var(--muted)] sm:px-8">Loading event images...</div>;
   }
 
   if (error) {
-    return <div className="text-center py-16 text-red-500">{error}</div>;
+    return <div id="events" className="mx-auto max-w-7xl px-5 py-24 text-center text-red-300 sm:px-8">{error}</div>;
   }
 
   if (images.length === 0) {
-    return <div className="text-center py-16">No event images found.</div>;
+    return <div id="events" className="mx-auto max-w-7xl px-5 py-24 text-center text-[var(--muted)] sm:px-8">No event images found.</div>;
   }
 
   const handleThumbnailClick = (index: number) => {
@@ -62,35 +62,37 @@ const EventImages: React.FC = () => {
   };
 
   return (
-    <section id="events" className="py-16 px-4 md:px-8 bg-[var(--background)]">
-      <h2 className="text-4xl font-bold text-center mb-12 text-[var(--foreground)]">Event Images</h2>
+    <section id="events" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
+      <div className="mb-10 flex items-end justify-between gap-6">
+        <div><p className="eyebrow mb-3">Field notes</p><h2 className="display-face text-4xl font-bold sm:text-6xl">From the archive</h2></div>
+        <span className="hidden font-mono text-xs text-[var(--muted)] sm:block">SCROLL TO EXPLORE ↓</span>
+      </div>
       <div className="flex flex-col items-center">
         {/* Main Image Display */}
-        <div className="relative w-full max-w-3xl h-96 mb-8">
+        <div className="relative mb-8 h-[22rem] w-full max-w-5xl overflow-hidden rounded-3xl border border-[var(--line)] bg-[var(--surface)] sm:h-[32rem]">
           {images[activeIndex]?.imageUrl && (
             <Image
               src={images[activeIndex].imageUrl}
               alt={images[activeIndex].title}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg shadow-lg"
+              fill
+              className="object-cover"
             />
           )}
           {/* Caption for the main image */}
           {images[activeIndex]?.title && ( // Display caption if available
-            <div className="absolute bottom-0 left-0 right-0 bg-[var(--background)] bg-opacity-50 text-[var(--foreground)] text-center p-2 rounded-b-lg">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#07111f] to-transparent px-6 pb-5 pt-12 text-left text-sm font-bold">
               {images[activeIndex].title}
             </div>
           )}
         </div>
 
         {/* Thumbnails */}
-        <div className="flex space-x-4 overflow-x-auto pb-4">
+        <div className="scrollbar-hide flex max-w-full space-x-3 overflow-x-auto pb-4">
           {images.map((event, index) => (
             <div
               key={event.id}
-              className={`relative w-24 h-24 rounded-lg shadow-md cursor-pointer overflow-hidden ${
-                index === activeIndex ? 'border-4 border-[var(--accent-color)]' : ''
+              className={`relative h-20 w-28 shrink-0 cursor-pointer overflow-hidden rounded-xl border ${
+                index === activeIndex ? 'border-[var(--primary-color)]' : 'border-[var(--line)] opacity-60 hover:opacity-100'
               }`}
               onClick={() => handleThumbnailClick(index)}
             >
@@ -98,9 +100,8 @@ const EventImages: React.FC = () => {
                 <Image
                   src={event.imageUrl}
                   alt={event.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
+                  fill
+                  className="object-cover"
                 />
               )}
             </div>

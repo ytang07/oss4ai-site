@@ -38,15 +38,15 @@ const PartnerLogos: React.FC = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading partners...</div>;
+    return <div id="partners" className="mx-auto max-w-7xl px-5 py-20 text-[var(--muted)] sm:px-8">Loading partners...</div>;
   }
 
   if (error) {
-    return <div>Error loading partners: {error}</div>;
+    return <div id="partners" className="mx-auto max-w-7xl px-5 py-20 text-red-300 sm:px-8">Error loading partners: {error}</div>;
   }
 
   if (partners.length === 0) {
-    return <div>No partners found.</div>;
+    return <div id="partners" className="mx-auto max-w-7xl px-5 py-20 text-[var(--muted)] sm:px-8">No partners found.</div>;
   }
 
   // Settings for the carousel
@@ -57,7 +57,7 @@ const PartnerLogos: React.FC = () => {
     slidesToShow: 5, // Number of slides to show at once
     slidesToScroll: 1, // Number of slides to scroll at once
     autoplay: true, // Enable autoplay
-    autoplaySpeed: 100, // Set to 0 for constant movement, or a very small number
+    autoplaySpeed: 1800,
     arrows: false, // Hide arrows
     responsive: [
       {
@@ -95,8 +95,8 @@ const PartnerLogos: React.FC = () => {
   };
 
   return (
-    <div className="partner-logos-container py-16 px-4 md:px-8 bg-[var(--background)]"> {/* Changed background to dark gray */}
-      <h2 className="text-4xl font-bold text-center mb-12 text-[var(--foreground)]">Trusted by Leading Organizations</h2> {/* Changed text color to white */}
+    <div id="partners" className="partner-logos-container mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10">
+      <div className="mb-10"><p className="eyebrow mb-3">The network</p><h2 className="display-face text-4xl font-bold sm:text-6xl">Built in public.</h2></div>
       <Slider {...settings}>
         {partners.map((partner) => (
           <div key={partner.id} className="logo-item-wrapper">
@@ -125,8 +125,9 @@ const PartnerLogos: React.FC = () => {
           align-items: center;
           justify-content: center;
           padding: 20px;
-          border-radius: 8px;
-          background-color: var(--background); /* Keep background of individual logo item white */
+          border: 1px solid var(--line);
+          border-radius: 16px;
+          background-color: var(--surface);
           min-width: 150px; /* Ensure a minimum width for each item */
           height: 150px; /* Fixed height for consistency */
           margin: 0 auto; /* Center the item if it's smaller than its container */
@@ -138,7 +139,7 @@ const PartnerLogos: React.FC = () => {
         }
         .logo-item span {
           font-weight: bold;
-          color: var(--foreground); /* Keep text color dark */
+          color: var(--muted);
           margin-top: 12px; /* Increased margin for better separation */
         }
         /* Custom styles for slick-carousel */
