@@ -9,7 +9,7 @@
     "oss4ai-selfie-wall": {
         "routing": [
             {
-                "paths": ["/selfies"]
+                "paths": ["/selfies", "/selfies/:path*"]
             }
         ]
         }
