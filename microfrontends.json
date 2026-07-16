@@ -5,6 +5,13 @@
       "development": {
         "fallback": "www.oss4.ai"
       }
+    },
+    "oss4ai-selfie-wall": {
+        "routing": [
+            {
+                "paths": ["/selfies"]
+            }
+        ]
+        }
     }
-  }
 }
