@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/microfrontends.json",
+  "applications": {
+    "oss4ai-site": {
+      "development": {
+        "fallback": "www.oss4.ai"
+      }
+    }
+  }
+}
