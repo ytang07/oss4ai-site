@@ -25,7 +25,6 @@ export async function POST(request: Request) {
     if (configuredSecret && payload.verification_token !== configuredSecret) {
       return NextResponse.json({ error: "Invalid verification token." }, { status: 401 });
     }
-    console.info("Notion webhook verification token:", payload.verification_token);
     return NextResponse.json({ verification_token: payload.verification_token });
   }
 
