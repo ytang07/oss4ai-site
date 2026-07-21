@@ -6,7 +6,7 @@ export default function Footer() {
       <p className="font-mono">© {new Date().getFullYear()} OSS4AI</p>
       <div className="flex gap-6 font-bold uppercase tracking-[.12em]">
         <Link href="https://lu.ma/oss4ai" className="hover:text-[var(--primary-color)]">Events</Link>
-        <a href="mailto:hello@oss4.ai" className="hover:text-[var(--primary-color)]">Contact</a>
+        <a href="mailto:yujian@oss4.ai" className="hover:text-[var(--primary-color)]">Contact</a>
       </div>
     </footer>
   );

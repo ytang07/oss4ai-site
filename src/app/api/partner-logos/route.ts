@@ -1,4 +1,5 @@
 import { Client } from "@notionhq/client";
+import { unstable_cache } from "next/cache";
 import { NextResponse } from 'next/server';
 
 // Initialize Notion client
@@ -9,7 +10,7 @@ const notion = new Client({
 // Use the partner database ID from environment variables
 const databaseId = process.env.NOTION_PARTNERS_DATABASE_ID!;
 
-export async function GET() {
+async function fetchPartnerLogos() {
   try {
     // Retrieve the database to get its data sources.
     const database = await notion.databases.retrieve({
@@ -46,10 +47,23 @@ export async function GET() {
     // Filter out entries without a logo URL before returning
     const validLogos = partners.filter(partner => partner.logoUrl !== null);
 
-    return NextResponse.json(validLogos);
+    return validLogos;
 
   } catch (error: any) {
     console.error("Error fetching partners from Notion API:", error);
+    throw error;
+  }
+}
+
+const getPartnerLogos = unstable_cache(fetchPartnerLogos, ["partner-logos"], {
+  revalidate: 86400,
+  tags: ["partner-logos"],
+});
+
+export async function GET() {
+  try {
+    return NextResponse.json(await getPartnerLogos());
+  } catch (error: any) {
     const errorMessage = error.message || "An unknown error occurred";
     return NextResponse.json({ error: `Failed to fetch partners: ${errorMessage}` }, { status: 500 });
   }

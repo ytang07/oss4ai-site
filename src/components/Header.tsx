@@ -9,9 +9,10 @@ export default function Header() {
         <span className="font-mono text-sm font-bold tracking-[.12em]">OSS4AI<span className="text-[var(--primary-color)]">/</span></span>
       </Link>
       <nav className="flex items-center gap-5 text-xs font-bold tracking-[.08em] text-[var(--muted)] uppercase sm:gap-8">
-        <Link href="#events" className="hover:text-[var(--foreground)]">Archive</Link>
-        <Link href="#partners" className="hidden hover:text-[var(--foreground)] sm:block">Community</Link>
+        <Link href="/#events" className="hover:text-[var(--foreground)]">Archive</Link>
+        <Link href="/#partners" className="hidden hover:text-[var(--foreground)] sm:block">Community</Link>
         <Link href="/honorees" className="hover:text-[var(--foreground)]">Honorees</Link>
+        <Link href="/academy" className="hidden hover:text-[var(--foreground)] md:block">Academy</Link>
         <Link href="https://oss4.ai/selfies" className="button-primary !px-4 !py-2.5 !text-[.68rem]">Selfies</Link>
         <Link href="https://lu.ma/oss4ai" className="button-ghost !px-4 !py-2.5 !text-[.68rem] !text-[var(--foreground)]">Calendar</Link>
       </nav>

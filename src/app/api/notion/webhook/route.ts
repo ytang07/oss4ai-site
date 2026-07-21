@@ -39,5 +39,7 @@ export async function POST(request: Request) {
   }
 
   revalidateTag("honorees");
+  revalidateTag("event-images");
+  revalidateTag("partner-logos");
   return NextResponse.json({ revalidated: true });
 }

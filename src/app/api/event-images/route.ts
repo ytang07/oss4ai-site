@@ -1,4 +1,5 @@
 import { Client } from "@notionhq/client";
+import { unstable_cache } from "next/cache";
 import { NextResponse } from 'next/server';
 
 // Initialize Notion client
@@ -8,7 +9,7 @@ const notion = new Client({
 
 const databaseId = process.env.NOTION_EVENT_DATABASE_ID!;
 
-export async function GET() {
+async function fetchEventImages() {
   try {
     // Retrieve the database to get its data sources.
     // Note: TypeScript might complain about 'data_sources' not existing on GetDatabaseResponse,
@@ -49,11 +50,23 @@ export async function GET() {
     // Filter out entries without an image URL before returning
     const validImages = events.filter(event => event.imageUrl !== null);
 
-    return NextResponse.json(validImages);
+    return validImages;
 
   } catch (error: any) {
     console.error("Error fetching events from Notion API:", error);
-    // Provide a more specific error message if possible
+    throw error;
+  }
+}
+
+const getEventImages = unstable_cache(fetchEventImages, ["event-images"], {
+  revalidate: 86400,
+  tags: ["event-images"],
+});
+
+export async function GET() {
+  try {
+    return NextResponse.json(await getEventImages());
+  } catch (error: any) {
     const errorMessage = error.message || "An unknown error occurred";
     return NextResponse.json({ error: `Failed to fetch events: ${errorMessage}` }, { status: 500 });
   }
