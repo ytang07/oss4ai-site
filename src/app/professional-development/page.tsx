@@ -110,7 +110,7 @@ export default function AcademyPage() {
         <section className="mx-auto max-w-7xl px-5 pb-24 text-center sm:px-8 lg:px-10">
           <p className="eyebrow mb-5">Ready when you are</p>
           <h2 className="display-face mx-auto max-w-3xl text-5xl font-bold sm:text-7xl">Your next chapter starts <span className="text-[var(--primary-color)]">here.</span></h2>
-          <a href="mailto:yujian@oss4.ai?subject=Professional%20development%20program" className="button-primary mt-9">Talk to OSS4AI <span aria-hidden="true">↗</span></a>
+          <a href="https://forms.gle/ZGJRDdEGfDSDwZQ58" className="button-primary mt-9">Apply Now <span aria-hidden="true">↗</span></a>
           <p className="mt-6 text-sm text-[var(--muted)]"><Link href="/professional-development/terms-and-conditions" className="underline underline-offset-4 hover:text-[var(--foreground)]">Terms and Conditions</Link></p>
         </section>
       </main>
