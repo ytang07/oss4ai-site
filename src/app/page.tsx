@@ -22,7 +22,7 @@ export default function Home() {
           <div className="relative mx-auto w-full max-w-[28rem] md:ml-auto">
             <div className="absolute -inset-5 rounded-full bg-[var(--primary-color)]/10 blur-3xl" />
             <div className="relative aspect-square overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--surface)] p-5 sm:p-10">
-              <Image src="/images/oss4ai_logo_clarified_transparent.png" alt="OSS4AI network logo" fill className="object-contain p-5 sm:p-10" priority />
+              <Image src="/images/oss4ai_aug_2026_logo_square.png" alt="OSS4AI network logo" fill className="rounded-full object-cover p-5 sm:p-10" priority />
               <span className="absolute left-6 top-6 font-mono text-[.62rem] tracking-[.16em] text-[var(--muted)]">01 / CONNECT</span>
               <span className="absolute bottom-6 right-6 font-mono text-[.62rem] tracking-[.16em] text-[var(--primary-color)]">OPEN BY DEFAULT</span>
             </div>
