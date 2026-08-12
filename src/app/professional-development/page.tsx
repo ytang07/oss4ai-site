@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AcademyTestimonials from "@/components/AcademyTestimonials";
 import Link from "next/link";
 
 export const metadata = {
@@ -63,6 +64,8 @@ export default function AcademyPage() {
         </section>
 
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><div className="section-rule" /></div>
+
+        <AcademyTestimonials />
 
         <section className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
